@@ -2,7 +2,7 @@ COMPILER = gcc
 EX = .c
 
 OBJdir = bin
-HDRdir = hdr
+HDRdir = include
 SRCdir = src
 
 obj = $(patsubst $(SRCdir)/%$(EX), $(OBJdir)/%.o, $(wildcard $(SRCdir)/*))
