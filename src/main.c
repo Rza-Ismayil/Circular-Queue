@@ -17,8 +17,13 @@ int main(){
   while (n!=-2){
     scanf("%d",&n);
     if (n == -2) break;
-    if (n == -1) deQueue(&myFifo);
-    else enQueue(&myFifo,n);
+    if (n == -1) {
+      int nRmvdElmt = deQueue(&myFifo);
+      if (nRmvdElmt == -1) printf("Empty queue!\n");
+    } else {
+      int result = enQueue(&myFifo,n);
+      if (result) printf("Queue is full\n");
+    }
     printQueue(&myFifo);    
   }
 
